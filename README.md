@@ -1,3 +1,3 @@
-# Test express js with typescript app
+# Template express ts webapp.
 
 ## by Shayan Zahedanaraki
