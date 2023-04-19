@@ -6,14 +6,16 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\""
+    "watch:backend": "tsc-watch -p tsconfig.backend.json --onSuccess \"node dist/backend/index.js\"",
+    "watch:frontend": "tsc -p tsconfig.frontend.json --watch",
+    "start": "concurrently \"npm:watch:backend\" \"npm:watch:frontend\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "concurrently": "^8.0.1",
     "tsc-watch": "^6.0.0",
     "typescript": "^5.0.4"
   },
